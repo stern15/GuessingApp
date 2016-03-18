@@ -11,6 +11,8 @@ import java.util.Random;
 
 public class MainActivity extends AppCompatActivity {
     int ranNum;
+    Random ran = new Random();
+
 
 
     public void checkGuess(View view) {
@@ -34,7 +36,8 @@ public class MainActivity extends AppCompatActivity {
 
             message="your number is smaller that the one generated";
         } else {
-            message= "EREKAAA!!You are right";
+            message= "EREKAAA!!You are right,now guess another number:-)";
+            ranNum = ran.nextInt(21);
         }
         Toast.makeText(getApplicationContext(), message, Toast.LENGTH_SHORT).show();
 
@@ -47,7 +50,6 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        Random ran = new Random();
 
         ranNum = ran.nextInt(21);
     }
